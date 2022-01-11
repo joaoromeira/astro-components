@@ -1,4 +1,4 @@
-# 🧩 Magic Components
+# 🧩 Astro Components
 
 ## Commands
 
@@ -11,7 +11,7 @@ yarn
 To run
 
 ```shell
-yarn storybook
+yarn start:storybook
 ```
 
 ## Components
