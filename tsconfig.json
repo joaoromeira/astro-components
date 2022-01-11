@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    // Default
+    "target": "es5", 
+    "esModuleInterop": true, 
+    "forceConsistentCasingInFileNames": true,
+    "strict": true, 
+    "skipLibCheck": true,
+
+    // Added
+    "jsx": "preserve",
+    "module": "ESNext",  
+    "declaration": true,    
+    "sourceMap": true,
+    "outDir": "lib",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "emitDeclarationOnly": true,
+    "strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,    
+    "isolatedModules": false,    
+    "noImplicitAny": false,
+    "removeComments": true,    
+    "downlevelIteration": true,
+    "typeRoots": [
+      "./src/@types",
+      "./node_modules/@types"
+    ],
+    "baseUrl": "./"
+  },
+  "include": ["./src/**/*"],
+  "exclude": ["node_modules", "stories", "lib"]
+}
