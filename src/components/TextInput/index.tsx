@@ -14,7 +14,7 @@ export const TextInput: FC<TextInputProps> = ({
   ...rest
 }) => {
   return (
-    <Container className={`magic-text-input ${className}`}>
+    <Container className={`astro-text-input ${className}`}>
       <Label>{label}</Label>
       <Input {...rest} />
     </Container>

@@ -19,7 +19,7 @@ export const Grid: FC<GridProps> = ({
       columns={columns}
       rows={rows}
       gap={gap}
-      className={`magic-grid ${className}`}
+      className={`astro-grid ${className}`}
       {...rest}
     >
       {children}

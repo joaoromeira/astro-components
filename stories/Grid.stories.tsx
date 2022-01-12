@@ -16,10 +16,10 @@ Default.args = {
   columns: '1fr 1fr 1fr',
   gap: 16,
   children: (
-    <div>
+    <>
       <Button color="primary">Success</Button>
       <Button color="secondary">Help</Button>
       <Button color="success">Info</Button>
-    </div>
+    </>
   ),
 };

@@ -8,7 +8,7 @@ export interface LabelProps extends LabelHTMLAttributes<HTMLLabelElement> {
 
 export const Label: FC<LabelProps> = ({ className, children, ...rest }) => {
   return (
-    <Container className={`magic-label ${className}`} {...rest}>
+    <Container className={`astro-label ${className}`} {...rest}>
       {children}
     </Container>
   );

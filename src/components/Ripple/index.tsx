@@ -40,7 +40,7 @@ export const Ripple = ({
 
   return (
     <Container
-      className={`magic-ripple ${className}`}
+      className={`astro-ripple ${className}`}
       duration={duration}
       color={color}
       onMouseDown={addRipple}

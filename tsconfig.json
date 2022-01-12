@@ -30,6 +30,6 @@
     ],
     "baseUrl": "./"
   },
-  "include": ["./src/**/*"],
-  "exclude": ["node_modules", "stories", "lib"]
+  "include": ["./src/**/*", "./stories/**/*"],
+  "exclude": ["node_modules", "lib"]
 }

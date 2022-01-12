@@ -14,7 +14,7 @@ export const Button = ({
   ...rest
 }: ButtonProps): JSX.Element => {
   return (
-    <Container className={`magic-button ${className}`} color={color} {...rest}>
+    <Container className={`astro-button ${className}`} color={color} {...rest}>
       {children}
       <Ripple duration={600} />
     </Container>
