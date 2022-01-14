@@ -40,3 +40,9 @@ yarn start:storybook
 ## Changelog
 
 If you have recently updated, please read the [changelog](https://github.com/joaoromeira/astro-components/releases) for details of what has changed.
+
+## Donate
+
+Access the follow link [PayPal](https://www.paypal.com/donate/?hosted_button_id=FMACD23VXLYVQ) or scan this QR:
+
+![QRCode](./.github/qr.png)
