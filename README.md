@@ -1,4 +1,4 @@
-# 🧩 Astro Components
+# 🌠 Astro Components
 
 ![Logo](./.github/astro.png)
 
