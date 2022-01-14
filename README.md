@@ -1,5 +1,7 @@
 # 🧩 Astro Components
 
+![Logo](./.github/astro.png)
+
 ## Commands
 
 Install dependencies
@@ -34,3 +36,7 @@ yarn start:storybook
 - [ ] Textarea
 - [ ] TextInput
 - [ ] Title
+
+## Changelog
+
+If you have recently updated, please read the [changelog](https://github.com/joaoromeira/astro-components/releases) for details of what has changed.
