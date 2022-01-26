@@ -26,6 +26,14 @@ export const Display = styled.div`
   `};
 `;
 
+export const DisplayItem = styled.div`
+  padding: 4px;
+  border-radius: 3px;
+  background-color: #fafafa;
+
+  display: inline-block;
+`;
+
 export const Dropdown = styled.div`
   display: grid;
   margin-top: 8px;

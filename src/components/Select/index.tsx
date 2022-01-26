@@ -6,8 +6,9 @@ import {
   useState,
 } from 'react';
 
+// import ArrowDown from '../../images/assets/arrow-down.svg';
 import { Label } from '../Label';
-import { Container, Display, Dropdown } from './styles';
+import { Container, Display, DisplayItem, Dropdown } from './styles';
 
 export interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
   label: string;
@@ -18,19 +19,19 @@ export interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
 const DEFAULT_OPTIONS = [
   {
     label: 'Item 1',
-    value: 1,
+    value: '1',
   },
   {
     label: 'Item 2',
-    value: 2,
+    value: '2',
   },
   {
     label: 'Item 3',
-    value: 3,
+    value: '3',
   },
   {
     label: 'Item 4',
-    value: 4,
+    value: '4',
   },
 ];
 
@@ -41,22 +42,13 @@ export const Select: FC<SelectProps> = ({
 }) => {
   const [dropdownOpened, setDropdownOpened] = useState<boolean>(false);
   const [selectedValues, setSelectedValues] = useState<string[]>([]);
-  const [selectedValue, setSelectedValue] = useState<string>('');
 
   useEffect(() => {
-    console.log(selectedValues);
-  }, [selectedValues]);
+    // Clear values when change multiple
+    setSelectedValues([]);
+  }, [multiple]);
 
-  useEffect(() => {
-    console.log(selectedValue);
-  }, [selectedValue]);
-
-  const handleOnChangeSingleInput = ({
-    target,
-  }: ChangeEvent<HTMLInputElement>) => {
-    setSelectedValue(target.value);
-  };
-
+  // Handles
   const handleOnChangeMultipleInput = ({
     target,
   }: ChangeEvent<HTMLInputElement>) => {
@@ -67,22 +59,33 @@ export const Select: FC<SelectProps> = ({
     }
   };
 
-  const handleOpenDropdown = () => {
+  const handleOnChangeSingleInput = ({
+    target,
+  }: ChangeEvent<HTMLInputElement>) => {
+    setSelectedValues([target.value]);
+  };
+
+  const handleToggleDropdown = () => {
     setDropdownOpened((b) => !b);
   };
 
   return (
     <Container className={`astro-select ${className}`}>
       <Label>{label}</Label>
-      <Display onClick={handleOpenDropdown} />
+      <Display onClick={handleToggleDropdown}>
+        {selectedValues.map((selectedValue, index) => (
+          <DisplayItem key={index.toString()}>{selectedValue}</DisplayItem>
+        ))}
+      </Display>
       {dropdownOpened && (
         <Dropdown>
-          {DEFAULT_OPTIONS.map((item, index) => (
+          {DEFAULT_OPTIONS.map((option, index) => (
             <label key={index.toString()}>
               <input
                 type={multiple ? 'checkbox' : 'radio'}
                 name="test"
-                value={item.value}
+                value={option.value}
+                checked={selectedValues.includes(option.value)}
                 onChange={
                   multiple
                     ? handleOnChangeMultipleInput
@@ -90,7 +93,7 @@ export const Select: FC<SelectProps> = ({
                 }
               />
               <span />
-              <span>{item.label}</span>
+              <span>{option.label}</span>
             </label>
           ))}
         </Dropdown>
